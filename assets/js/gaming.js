@@ -201,7 +201,7 @@
       deleteButton.textContent = "Delete entry";
       deleteButton.setAttribute(
         "aria-label",
-        `Delete session from ${readableDate(entry.date)}: ${entry.focus}`,
+        `Delete entry: session from ${readableDate(entry.date)}: ${entry.focus}`,
       );
       deleteButton.addEventListener("click", () => {
         const next = item.nextElementSibling || item.previousElementSibling;

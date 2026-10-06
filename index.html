@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#101210" />
+    <meta name="theme-color" content="#121011" />
     <meta
       name="description"
       content="Andreas Paraskeva — systems engineer and full-stack developer based in Cyprus. Explore web projects, robotics research, education, and a little life on the Rift."
@@ -20,12 +20,16 @@
     <meta property="og:url" content="https://antreasparaskeva.com/" />
     <meta
       property="og:image"
-      content="https://antreasparaskeva.com/assets/images/hero-art.webp"
+      content="https://antreasparaskeva.com/assets/images/hero-art-red.webp"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Andreas Paraskeva — Systems thinker. Digital builder.</title>
     <link rel="canonical" href="https://antreasparaskeva.com/" />
-    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="assets/images/favicon.svg?v=red-intro-2"
+      type="image/svg+xml"
+    />
     <link
       rel="preload"
       href="assets/fonts/SpaceGrotesk.woff2"
@@ -35,15 +39,66 @@
     />
     <link
       rel="preload"
-      href="assets/images/hero-art.webp"
+      href="assets/images/hero-art-red.webp"
       as="image"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=red-intro-2" />
+    <link rel="stylesheet" href="assets/css/intro.css?v=red-intro-2" />
+    <script src="assets/js/main.js?v=red-intro-2" defer></script>
+    <script src="assets/js/intro.js?v=red-intro-2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <dialog
+      class="site-intro"
+      id="site-intro"
+      aria-labelledby="intro-name"
+      aria-describedby="intro-caption"
+    >
+      <div class="intro-top">
+        <p class="intro-label">AP / A PERSONAL PORTFOLIO</p>
+        <button class="intro-skip" type="button" data-intro-skip>
+          Skip intro <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <img
+          src="assets/images/hero-art-red.webp"
+          alt=""
+          width="1536"
+          height="1024"
+          decoding="async"
+        /><span class="intro-art-shade"></span>
+      </div>
+      <div class="intro-center">
+        <p class="intro-pretitle">
+          A LITTLE CURIOSITY. A DIFFERENT PERSPECTIVE.
+        </p>
+        <h2 class="intro-name" id="intro-name">
+          <span class="intro-word-mask"
+            ><span class="intro-word">Andreas</span></span
+          ><span class="intro-word-mask"
+            ><span class="intro-word"
+              >Paraskeva<span class="intro-dot">.</span></span
+            ></span
+          >
+        </h2>
+        <p class="intro-caption" id="intro-caption">
+          Systems thinker. Digital builder.
+        </p>
+      </div>
+      <div class="intro-bottom">
+        <p class="intro-label">CYPRUS<br /><span>SYSTEMS / WEB / PLAY</span></p>
+        <button class="intro-enter" type="button" data-intro-skip>
+          Enter portfolio <span aria-hidden="true">↗</span>
+        </button>
+        <p class="intro-label intro-edition">
+          WELCOME TO MY CORNER<br /><span>EST. IN CURIOSITY</span>
+        </p>
+      </div>
+      <span class="intro-rule" aria-hidden="true"></span>
+    </dialog>
     <div class="scroll-progress" aria-hidden="true"></div>
     <header class="site-header shell">
       <a
@@ -84,7 +139,7 @@
       <section class="hero shell" aria-labelledby="hero-title">
         <div class="hero-image" aria-hidden="true">
           <img
-            src="assets/images/hero-art.webp"
+            src="assets/images/hero-art-red.webp"
             width="1536"
             height="1024"
             alt=""
@@ -100,15 +155,15 @@
         </div>
         <div class="hero-content">
           <p class="hero-kicker">Systems thinker. Digital builder.</p>
-          <h1 id="hero-title">
-            Andreas<br />Paraskeva<span class="lime">.</span>
+          <h1 id="hero-title" tabindex="-1">
+            Andreas<br />Paraskeva<span class="accent">.</span>
           </h1>
           <p class="hero-description">
             Connecting thoughtful design with technology that works. From
             full-stack platforms to the systems behind them.
           </p>
           <div class="hero-actions">
-            <a class="button button--lime" href="#work"
+            <a class="button button--accent" href="#work"
               >Explore my work <span aria-hidden="true">↘</span></a
             ><a
               class="text-link"
@@ -130,7 +185,7 @@
           >
           <p class="hero-current">
             <span class="muted">CURRENT CHAPTER</span><br />Systems Engineer
-            <span class="lime">/</span> IBSCYLTD
+            <span class="accent">/</span> IBSCYLTD
           </p>
           <p class="local-time mono">
             CYPRUS <span data-local-time>UTC+3</span>
@@ -156,7 +211,7 @@
           <p class="eyebrow">01 / THINGS I’VE BUILT</p>
           <div class="heading-row">
             <h2 id="work-title">
-              Selected work<span class="lime">.</span><sup>(02)</sup>
+              Selected work<span class="accent">.</span><sup>(02)</sup>
             </h2>
             <p>Real problems.<br />Useful digital solutions.</p>
           </div>
@@ -362,7 +417,7 @@
         <div class="section-heading reveal">
           <p class="eyebrow">03 / EXPERIENCE THAT SHAPED ME</p>
           <div class="heading-row">
-            <h2 id="journey-title">The journey<span class="lime">.</span></h2>
+            <h2 id="journey-title">The journey<span class="accent">.</span></h2>
             <p>Different environments.<br />The same drive to understand.</p>
           </div>
         </div>
@@ -495,7 +550,7 @@
               Same curiosity. A different arena. Step into my League of Legends
               corner — the accounts, the games, and the progress along the way.
             </p>
-            <a class="button button--lime" href="gaming/"
+            <a class="button button--accent" href="gaming/"
               >Enter the gaming corner <span aria-hidden="true">↗</span></a
             >
           </div>
@@ -525,7 +580,7 @@
                 what you have in mind.
               </p>
               <a
-                class="button button--lime"
+                class="button button--accent"
                 href="mailto:andreas.paraskeva2711@hotmail.com"
                 >Get in touch <span aria-hidden="true">↗</span></a
               >
@@ -574,7 +629,10 @@
           rel="noopener noreferrer"
           >LinkedIn ↗</a
         ><a href="assets/docs/Andreas-Paraskeva-CV.pdf" download>CV ↓</a
-        ><a href="gaming/">Gaming ↗</a><a href="#main">Back to top ↑</a>
+        ><a href="gaming/">Gaming ↗</a
+        ><button type="button" class="footer-replay" data-replay-intro hidden>
+          Replay intro</button
+        ><a href="#main">Back to top ↑</a>
       </div>
     </footer>
     <dialog
@@ -596,7 +654,7 @@
       <p class="dialog-intro" id="dialog-intro"></p>
       <div class="dialog-body" id="dialog-body"></div>
       <div class="tags" id="dialog-tags"></div>
-      <a class="button button--lime" id="dialog-link" href="#work"
+      <a class="button button--accent" id="dialog-link" href="#work"
         >Visit website ↗</a
       >
       <p class="dialog-note" id="dialog-note"></p>

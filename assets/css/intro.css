@@ -1,0 +1,315 @@
+/* The opening is an original animated name and artwork reveal.
+   Timing and behavior are configured in assets/js/intro.js. */
+.site-intro {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100svh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  color: var(--text);
+  background: var(--bg);
+  isolation: isolate;
+}
+.site-intro[open] {
+  display: flex;
+  flex-direction: column;
+}
+.site-intro::backdrop {
+  background: var(--bg);
+}
+body.intro-open {
+  overflow: hidden;
+}
+.intro-top,
+.intro-bottom {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 35px var(--gutter);
+}
+.intro-label,
+.intro-pretitle {
+  font: 9px/1.8 var(--mono);
+  letter-spacing: 0.1em;
+  color: #d0bfc4;
+}
+.intro-label > span {
+  color: #aaa0a1;
+  font-size: 8px;
+}
+.intro-skip,
+.intro-enter {
+  position: relative;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 11px;
+  padding: 9px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+}
+.intro-skip::after,
+.intro-enter::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--accent);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+.intro-skip:hover::after,
+.intro-enter:hover::after {
+  transform: scaleX(0.65);
+}
+.intro-skip span,
+.intro-enter span {
+  color: var(--accent);
+  font-size: 19px;
+}
+.intro-art {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(24% 38%);
+  opacity: 0;
+  will-change: clip-path, opacity;
+}
+.intro-art > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 67% center;
+}
+.intro-art-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(#121011aa, #121011aa),
+    linear-gradient(
+      0deg,
+      #121011ed,
+      transparent 30%,
+      transparent 70%,
+      #121011ed
+    );
+}
+.intro-center {
+  z-index: 2;
+  position: relative;
+  margin-block: auto;
+  padding: 30px var(--gutter) 20px;
+  width: 100%;
+  text-align: center;
+}
+.intro-pretitle {
+  margin-bottom: 26px;
+  color: #e9cfd5;
+}
+.intro-name {
+  font-size: clamp(72px, 10.8vw, 185px);
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+  font-weight: 500;
+}
+.intro-word-mask {
+  display: block;
+  padding-block: 8px;
+  overflow: hidden;
+}
+.intro-word {
+  display: inline-block;
+  will-change: transform;
+}
+.intro-dot {
+  color: var(--accent);
+}
+.intro-caption {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #e5d8dd;
+}
+.intro-bottom {
+  padding-block: 28px 35px;
+}
+.intro-edition {
+  text-align: right;
+}
+.intro-rule {
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.site-intro.is-playing .intro-word {
+  animation: introName 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.site-intro.is-playing .intro-word-mask:nth-child(2) .intro-word {
+  animation-delay: 0.22s;
+}
+.site-intro.is-playing .intro-art {
+  animation: introArt 3.35s cubic-bezier(0.6, 0.05, 0.2, 1) 0.38s both;
+}
+.site-intro.is-playing .intro-art img {
+  animation: introDrift 4.1s cubic-bezier(0.2, 0.55, 0.35, 1) both;
+}
+.site-intro.is-playing .intro-pretitle,
+.site-intro.is-playing .intro-caption {
+  animation: introCopy 1s 0.65s both;
+}
+.site-intro.is-playing .intro-caption {
+  animation-delay: 1.05s;
+}
+.site-intro.is-playing .intro-rule {
+  animation: introRule 3.8s ease-in-out 0.15s both;
+}
+.site-intro.is-leaving {
+  animation: introLeave 0.7s cubic-bezier(0.76, 0, 0.24, 1) both;
+  pointer-events: none;
+}
+.site-intro.is-static .intro-art {
+  opacity: 0.75;
+  clip-path: inset(0);
+}
+.footer-replay {
+  padding: 0;
+  font: inherit;
+  border: 0;
+  background: none;
+  color: var(--text);
+}
+.footer-replay:hover {
+  color: var(--accent);
+}
+.hero h1:focus {
+  outline: none;
+}
+@keyframes introName {
+  from {
+    transform: translateY(125%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes introArt {
+  0% {
+    opacity: 0;
+    clip-path: inset(28% 42%);
+  }
+  25% {
+    opacity: 0.65;
+    clip-path: inset(18% 35%);
+  }
+  55% {
+    opacity: 0.9;
+    clip-path: inset(13% 29%);
+  }
+  100% {
+    opacity: 0.92;
+    clip-path: inset(0);
+  }
+}
+@keyframes introDrift {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes introCopy {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes introRule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes introLeave {
+  to {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+@media (max-width: 760px) {
+  .intro-top,
+  .intro-bottom {
+    padding-inline: var(--gutter);
+    gap: 16px;
+  }
+  .intro-top {
+    padding-top: 27px;
+  }
+  .intro-bottom {
+    padding-bottom: 27px;
+  }
+  .intro-label {
+    font-size: 7px;
+    letter-spacing: 0.04em;
+  }
+  .intro-label > span {
+    font-size: 6px;
+  }
+  .intro-skip,
+  .intro-enter {
+    font-size: 10px;
+    gap: 12px;
+  }
+  .intro-center {
+    padding-inline: 16px;
+  }
+  .intro-name {
+    font-size: clamp(52px, 13.7vw, 96px);
+    letter-spacing: -0.065em;
+  }
+  .intro-pretitle {
+    font-size: 7px;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+  }
+  .intro-caption {
+    font-size: 12px;
+    margin-top: 24px;
+  }
+  .intro-art > img {
+    object-position: 61% center;
+  }
+  .intro-edition {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-intro *,
+  .site-intro,
+  .site-intro::before,
+  .site-intro::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .intro-art {
+    opacity: 0.7;
+    clip-path: none;
+  }
+}

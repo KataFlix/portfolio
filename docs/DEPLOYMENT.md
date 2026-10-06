@@ -73,6 +73,8 @@ After uploading, open these URLs in a fresh browser tab:
 
 Check desktop and mobile layouts, menu and keyboard navigation, project dialogs, the CV download, contact links, both OP.GG account links, and adding/removing a journal entry. Reload the gaming page to check persistence in that browser.
 
+The latest package includes the red theme and animated introduction. Replace the supplied HTML, CSS, JavaScript, and image files together. The updated asset URLs include a version query to prevent old cached styles or scripts from interfering. Open the homepage in a new tab to see the opening, or use **Replay intro** in the footer. Skip, Enter, and Escape should immediately reveal the portfolio; reduced-motion settings skip automatic playback.
+
 Confirm that images and fonts load, and that the browser console reports no missing files. If old files appear, hard-refresh the page or clear the host/CDN cache. Linux hosting is case-sensitive: preserve every filename exactly.
 
 The site has no deployment service, remote upload script, or stored hosting credentials. Creating the ZIP prepares the files; FileZilla upload is the publication step.

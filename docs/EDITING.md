@@ -47,6 +47,16 @@ Contact links use `mailto:` and open the visitor's configured email application.
 
 ## Design and accessibility
 
+### Red theme and cinematic intro
+
+The shared accent is `--accent` in `assets/css/styles.css`; gaming uses `--game-accent` in `assets/css/gaming.css`. Keep the two colors aligned. The red hero artwork is `assets/images/hero-art-red.webp`. Updating it changes both the homepage and the opening reveal.
+
+Intro copy and controls are in the `#site-intro` dialog in `index.html`. Its animation is in `assets/css/intro.css`; playback and once-per-tab behavior are in `assets/js/intro.js`. The `SEQUENCE_MS` and `EXIT_MS` constants control the automatic entry time and final curtain transition. If these change, keep the CSS keyframe durations aligned. Skip, Enter, and Escape remain immediate exits.
+
+The intro is a short visual opening rather than a download-progress indicator. It does not delay the page for asset-loading promises. Reduced-motion preferences bypass automatic playback; manually replaying with reduced motion shows a static introduction with working exit controls. Direct section links bypass the intro too. The `ap.portfolio.intro.v1` sessionStorage marker controls the current tab, and storage failures never prevent entry.
+
+During review, use a new tab or the footer's **Replay intro** control. Preserve the modal dialog's accessible name, keyboard focus restoration, and page scroll cleanup. Without JavaScript the dialog stays closed and the portfolio remains available.
+
 Adjust shared CSS variables first to change the visual theme consistently. Keep readable contrast, visible keyboard focus, and mobile spacing. The responsive layout and reduced-motion handling should remain intact when adding animations.
 
 Use real links for navigation and buttons for interactions. Label interactive controls, keep heading order sensible, and ensure project dialogs can close with their close control and the Escape key. Test a keyboard-only pass after changing menus, dialogs, or controls.

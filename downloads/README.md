@@ -2,6 +2,8 @@
 
 Open `antreasparaskeva-portfolio.zip` in GitHub and choose **Download raw file** (the download-arrow button above the file).
 
+The current package includes the **red theme** and **animated name/image intro**. Upload all supplied site files together and replace matching files. The intro plays once per tab; use **Replay intro** in the footer to see it again. Skip, Enter, and Escape exit immediately, and reduced-motion preferences bypass autoplay.
+
 1. Extract the ZIP on your computer.
 2. Connect to your hosting account in FileZilla.
 3. Upload the **contents of `site/`** into the document root for `antreasparaskeva.com`, commonly `public_html/`.
