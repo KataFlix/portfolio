@@ -71,9 +71,9 @@ After uploading, open these URLs in a fresh browser tab:
 - `https://antreasparaskeva.com/gaming/`
 - `https://antreasparaskeva.com/assets/docs/Andreas-Paraskeva-CV.pdf`
 
-Check desktop and mobile layouts, menu and keyboard navigation, project dialogs, the CV download, contact links, both OP.GG account links, and adding/removing a journal entry. Reload the gaming page to check persistence in that browser.
+Check desktop and mobile layouts, menu and keyboard navigation, project dialogs, the CV download, contact links, both OP.GG account links (KataFlix on EUNE and EvelynnFlix on EUW), and smooth navigation between the portfolio and gaming. Check browser Back and section links too. The sessions section has been removed.
 
-The latest package includes the red theme and animated introduction. Replace the supplied HTML, CSS, JavaScript, and image files together. The updated asset URLs include a version query to prevent old cached styles or scripts from interfering. Open the homepage in a new tab to see the opening, or use **Replay intro** in the footer. Skip, Enter, and Escape should immediately reveal the portfolio; reduced-motion settings skip automatic playback.
+The latest package includes larger text, a redesigned layered-image intro, and smooth page transitions. It retains the red theme. Replace the supplied HTML, CSS, JavaScript, and image files together. The updated asset URLs include a version query to prevent old cached styles or scripts from interfering. Open the homepage in a new tab to see the opening, or use **Replay intro** in the footer. Skip, Enter, and Escape should immediately reveal the portfolio; reduced-motion settings skip automatic playback.
 
 Confirm that images and fonts load, and that the browser console reports no missing files. If old files appear, hard-refresh the page or clear the host/CDN cache. Linux hosting is case-sensitive: preserve every filename exactly.
 
@@ -83,4 +83,6 @@ The site has no deployment service, remote upload script, or stored hosting cred
 
 Read [EDITING.md](EDITING.md), preview changes locally, and create a fresh ZIP. Back up the live files before each deliberate replacement. Re-upload the changed files or the package contents, then repeat the relevant live checks. Preserve the `assets/fonts/` license files when publishing.
 
-Journal data belongs to each visitor's browser. Uploading a new version does not centrally edit or back up those entries. Changes to journal storage keys or data format should include a compatible migration.
+The removed session journal is no longer read or written. Previous entries already saved in a visitor's browser are left untouched.
+
+For this update, `downloads/portfolio-update.zip` contains only the changed public HTML, CSS, and JavaScript files. Extract it and upload the **contents of `site/`** into the existing document root, overwriting matching files. It adds `assets/css/transitions.css` and `assets/js/transitions.js`; upload both. Your existing fonts, images, and CV remain available. The complete `antreasparaskeva-portfolio.zip` remains the package to use for a fresh installation.

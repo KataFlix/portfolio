@@ -1,12 +1,7 @@
-# Download the ready-to-upload website
+# Download the website update
 
-Open `antreasparaskeva-portfolio.zip` in GitHub and choose **Download raw file** (the download-arrow button above the file).
+For an existing installation, open **portfolio-update.zip** in GitHub and choose **Download raw file**. Extract it and upload the **contents of `site/`** into your existing website folder through FileZilla, overwriting matching files. This small package contains only the changed HTML, CSS, and JavaScript, including the two new transition files.
 
-The current package includes the **red theme** and **animated name/image intro**. Upload all supplied site files together and replace matching files. The intro plays once per tab; use **Replay intro** in the footer to see it again. Skip, Enter, and Escape exit immediately, and reduced-motion preferences bypass autoplay.
+This update includes larger text, a redesigned animated-name and layered-image intro, smooth transitions between local pages, **EvelynnFlix#EUW** on EUW, and removal of the sessions journal. **KataFlix#EUNE** stays on EUNE. The opening plays once per tab; use **Replay intro** in the footer to see it again. Skip, Enter, and Escape exit immediately; reduced-motion settings bypass autoplay and page animation.
 
-1. Extract the ZIP on your computer.
-2. Connect to your hosting account in FileZilla.
-3. Upload the **contents of `site/`** into the document root for `antreasparaskeva.com`, commonly `public_html/`.
-4. Keep `UPLOAD-GUIDE/` on your computer for deployment and editing instructions.
-
-The PDF in the package is the original supplied CV. The website includes the added Systems Engineer role at IBSCYLTD from Oct 2026. The gaming journal stores personal notes in each visitor's browser and supports JSON backup export/import; current account statistics are accessed through the OP.GG links.
+For a fresh installation, download **antreasparaskeva-portfolio.zip**, extract it, and upload the **contents of `site/`**. Keep `UPLOAD-GUIDE/` on your computer. Fonts, images, and the original supplied CV are included in the complete package.

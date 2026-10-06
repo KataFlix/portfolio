@@ -1,9 +1,8 @@
-/* The opening is an original animated name and artwork reveal.
-   Timing and behavior are configured in assets/js/intro.js. */
+/* Original typography and three-image reveal. Align the exit with intro.js. */
 .site-intro {
   position: fixed;
   inset: 0;
-  width: 100vw;
+  width: 100%;
   max-width: none;
   height: 100svh;
   max-height: none;
@@ -33,155 +32,162 @@ body.intro-open {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 35px var(--gutter);
+  padding: 26px var(--gutter);
+}
+.intro-top {
+  border-bottom: 1px solid var(--line);
+}
+.intro-bottom {
+  border-top: 1px solid var(--line);
 }
 .intro-label,
 .intro-pretitle {
-  font: 9px/1.8 var(--mono);
-  letter-spacing: 0.1em;
-  color: #d0bfc4;
-}
-.intro-label > span {
-  color: #aaa0a1;
-  font-size: 8px;
+  font: 14px/1.6 var(--mono);
+  letter-spacing: 0.035em;
+  color: #e1d7d9;
 }
 .intro-skip,
 .intro-enter {
-  position: relative;
   border: 0;
-  background: transparent;
+  background: none;
   color: var(--text);
-  font-size: 11px;
-  padding: 9px 0;
+  font-size: 16px;
+  min-height: 44px;
+  padding: 6px 0;
   display: inline-flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
+  border-bottom: 1px solid var(--accent);
 }
-.intro-skip::after,
-.intro-enter::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 1px;
-  background: var(--accent);
-  transform-origin: left;
-  transition: transform 0.25s;
-}
-.intro-skip:hover::after,
-.intro-enter:hover::after {
-  transform: scaleX(0.65);
+.intro-skip:hover,
+.intro-enter:hover {
+  color: var(--accent);
 }
 .intro-skip span,
 .intro-enter span {
   color: var(--accent);
-  font-size: 19px;
+  font-size: 24px;
 }
-.intro-art {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
+.intro-stage {
+  position: relative;
+  flex: 1;
+  display: grid;
+  align-items: center;
+  min-height: 0;
   overflow: hidden;
-  clip-path: inset(24% 38%);
-  opacity: 0;
-  will-change: clip-path, opacity;
 }
-.intro-art > img {
+.intro-gallery {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.intro-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 31%;
+  height: 66%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  border: 1px solid #6c3941;
+  background: #27181c;
+}
+.intro-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 67% center;
+}
+.intro-card--core {
+  z-index: 1;
+  width: 42%;
+  height: 84%;
+}
+.intro-card--core img {
+  object-position: 64% center;
+}
+.intro-card--web {
+  left: 26%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+}
+.intro-card--mobile {
+  left: 74%;
+  transform: translate(-50%, -50%) rotate(8deg);
+}
+.intro-card--web img,
+.intro-card--mobile img {
+  filter: brightness(0.36) saturate(0.7);
 }
 .intro-art-shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(#121011aa, #121011aa),
-    linear-gradient(
-      0deg,
-      #121011ed,
-      transparent 30%,
-      transparent 70%,
-      #121011ed
-    );
+  background: #121011aa;
 }
 .intro-center {
-  z-index: 2;
   position: relative;
-  margin-block: auto;
-  padding: 30px var(--gutter) 20px;
+  z-index: 2;
   width: 100%;
-  text-align: center;
+  padding: 20px var(--gutter);
 }
 .intro-pretitle {
-  margin-bottom: 26px;
-  color: #e9cfd5;
+  margin-bottom: 28px;
 }
 .intro-name {
-  font-size: clamp(72px, 10.8vw, 185px);
-  letter-spacing: -0.065em;
-  line-height: 0.98;
+  font-size: clamp(80px, 13.4vw, 220px);
   font-weight: 500;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+  text-shadow: 0 2px 30px #121011a0;
 }
 .intro-word-mask {
   display: block;
-  padding-block: 8px;
   overflow: hidden;
+  padding-block: 10px;
+}
+.intro-word-mask:nth-child(2) {
+  text-align: right;
 }
 .intro-word {
   display: inline-block;
-  will-change: transform;
 }
 .intro-dot {
   color: var(--accent);
 }
 .intro-caption {
+  font-size: 22px;
+  line-height: 1.5;
   margin-top: 30px;
-  font-size: 14px;
-  color: #e5d8dd;
-}
-.intro-bottom {
-  padding-block: 28px 35px;
-}
-.intro-edition {
   text-align: right;
 }
-.intro-rule {
-  position: absolute;
-  inset: auto 0 0;
-  height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
+.is-playing .intro-word {
+  animation: introNameLeft 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-.site-intro.is-playing .intro-word {
-  animation: introName 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+.is-playing .intro-word-mask:nth-child(2) .intro-word {
+  animation-name: introNameRight;
+  animation-delay: 0.18s;
 }
-.site-intro.is-playing .intro-word-mask:nth-child(2) .intro-word {
-  animation-delay: 0.22s;
+.is-playing .intro-card--core {
+  animation: introCore 2.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
-.site-intro.is-playing .intro-art {
-  animation: introArt 3.35s cubic-bezier(0.6, 0.05, 0.2, 1) 0.38s both;
+.is-playing .intro-card--web {
+  animation: introSideLeft 1.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
 }
-.site-intro.is-playing .intro-art img {
-  animation: introDrift 4.1s cubic-bezier(0.2, 0.55, 0.35, 1) both;
+.is-playing .intro-card--mobile {
+  animation: introSideRight 1.7s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
 }
-.site-intro.is-playing .intro-pretitle,
-.site-intro.is-playing .intro-caption {
-  animation: introCopy 1s 0.65s both;
+.is-playing .intro-pretitle,
+.is-playing .intro-caption {
+  animation: introCopy 0.8s 0.85s both;
 }
-.site-intro.is-playing .intro-caption {
-  animation-delay: 1.05s;
-}
-.site-intro.is-playing .intro-rule {
-  animation: introRule 3.8s ease-in-out 0.15s both;
+.is-playing .intro-caption {
+  animation-delay: 1.2s;
 }
 .site-intro.is-leaving {
-  animation: introLeave 0.7s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: introLeave 0.65s cubic-bezier(0.76, 0, 0.24, 1) both;
   pointer-events: none;
 }
-.site-intro.is-static .intro-art {
-  opacity: 0.75;
-  clip-path: inset(0);
+.intro-unveiling main,
+.intro-unveiling .site-header {
+  animation: introUnveil 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .footer-replay {
   padding: 0;
@@ -196,120 +202,160 @@ body.intro-open {
 .hero h1:focus {
   outline: none;
 }
-@keyframes introName {
+@keyframes introNameLeft {
   from {
-    transform: translateY(125%);
+    transform: translate(-12%, 115%);
   }
   to {
-    transform: translateY(0);
+    transform: translate(0);
   }
 }
-@keyframes introArt {
-  0% {
+@keyframes introNameRight {
+  from {
+    transform: translate(12%, 115%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+@keyframes introCore {
+  from {
     opacity: 0;
-    clip-path: inset(28% 42%);
+    clip-path: inset(50% 0);
+    transform: translate(-50%, -50%) scale(1.2);
   }
-  25% {
-    opacity: 0.65;
-    clip-path: inset(18% 35%);
-  }
-  55% {
-    opacity: 0.9;
-    clip-path: inset(13% 29%);
-  }
-  100% {
-    opacity: 0.92;
-    clip-path: inset(0);
-  }
-}
-@keyframes introDrift {
-  from {
-    transform: scale(1.2);
+  35% {
+    opacity: 1;
   }
   to {
-    transform: scale(1);
+    opacity: 1;
+    clip-path: inset(0);
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes introSideLeft {
+  from {
+    opacity: 0;
+    transform: translate(-20%, -50%) rotate(0deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-8deg);
+  }
+}
+@keyframes introSideRight {
+  from {
+    opacity: 0;
+    transform: translate(-80%, -50%) rotate(0deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(8deg);
   }
 }
 @keyframes introCopy {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-@keyframes introRule {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
 @keyframes introLeave {
   to {
-    clip-path: inset(0 0 100% 0);
+    transform: translateY(-100%);
+  }
+}
+@keyframes introUnveil {
+  from {
+    opacity: 0.5;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @media (max-width: 760px) {
   .intro-top,
   .intro-bottom {
-    padding-inline: var(--gutter);
+    padding: 18px var(--gutter);
     gap: 16px;
   }
-  .intro-top {
-    padding-top: 27px;
+  .intro-top .intro-label {
+    max-width: 160px;
   }
-  .intro-bottom {
-    padding-bottom: 27px;
-  }
-  .intro-label {
-    font-size: 7px;
-    letter-spacing: 0.04em;
-  }
-  .intro-label > span {
-    font-size: 6px;
+  .intro-label,
+  .intro-pretitle {
+    font-size: 13px;
+    letter-spacing: 0;
   }
   .intro-skip,
   .intro-enter {
-    font-size: 10px;
+    font-size: 16px;
     gap: 12px;
+    flex-shrink: 0;
+  }
+  .intro-bottom {
+    align-items: flex-end;
+  }
+  .intro-bottom .intro-label {
+    max-width: 140px;
   }
   .intro-center {
-    padding-inline: 16px;
+    padding-inline: var(--gutter);
   }
   .intro-name {
-    font-size: clamp(52px, 13.7vw, 96px);
-    letter-spacing: -0.065em;
+    font-size: clamp(54px, 13.8vw, 100px);
+  }
+  .intro-word-mask {
+    padding-block: 8px;
   }
   .intro-pretitle {
-    font-size: 7px;
-    letter-spacing: 0.03em;
-    margin-bottom: 24px;
+    max-width: 220px;
+    margin-bottom: 38px;
   }
   .intro-caption {
-    font-size: 12px;
-    margin-top: 24px;
+    font-size: 18px;
+    margin-top: 36px;
   }
-  .intro-art > img {
-    object-position: 61% center;
+  .intro-card--core {
+    width: 72%;
+    height: 78%;
   }
-  .intro-edition {
-    display: none;
+  .intro-card--web {
+    left: 16%;
+    width: 47%;
+    height: 50%;
+  }
+  .intro-card--mobile {
+    left: 84%;
+    width: 47%;
+    height: 50%;
+  }
+}
+@media (max-height: 520px) {
+  .intro-top,
+  .intro-bottom {
+    padding-block: 8px;
+  }
+  .intro-name {
+    font-size: clamp(44px, 16vh, 85px);
+  }
+  .intro-pretitle {
+    margin-bottom: 4px;
+  }
+  .intro-caption {
+    margin-top: 4px;
+    font-size: 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .site-intro *,
-  .site-intro,
-  .site-intro::before,
-  .site-intro::after {
+  .site-intro {
     animation: none !important;
     transition: none !important;
-  }
-  .intro-art {
-    opacity: 0.7;
-    clip-path: none;
   }
 }

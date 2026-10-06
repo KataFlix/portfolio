@@ -35,10 +35,12 @@ The default output is `/workspace/artifacts/antreasparaskeva-portfolio.zip`. The
 | `gaming/index.html`                    | Gaming page and account links                            |
 | `assets/css/styles.css`                | Shared design, portfolio layout, and responsive styles   |
 | `assets/css/gaming.css`                | Gaming page styles                                       |
-| `assets/css/intro.css`                 | Cinematic opening and image-reveal animation              |
+| `assets/css/intro.css`                 | Cinematic opening and image-reveal animation             |
 | `assets/js/main.js`                    | Portfolio interactions and project dialog content        |
-| `assets/js/gaming.js`                  | Gaming interactions and local progress journal           |
-| `assets/js/intro.js`                   | Intro playback, skip, replay, and accessibility           |
+| `assets/js/gaming.js`                  | OP.GG account selection and region labels                |
+| `assets/css/transitions.css`           | Shared curtain animation between pages                   |
+| `assets/js/transitions.js`             | Local navigation, arrival, and browser-history handling  |
+| `assets/js/intro.js`                   | Intro playback, skip, replay, and accessibility          |
 | `assets/docs/Andreas-Paraskeva-CV.pdf` | Original CV supplied for this project                    |
 | `assets/fonts/`                        | Local fonts and their license files                      |
 | `assets/images/`                       | Original visual assets                                   |
@@ -48,7 +50,9 @@ The default output is `/workspace/artifacts/antreasparaskeva-portfolio.zip`. The
 
 The opening plays once per browser tab and reveals the name and original red artwork before entering the portfolio. **Skip intro**, **Enter portfolio**, and Escape close it immediately. **Replay intro** in the footer shows it again. Reduced-motion preferences and direct links to sections bypass automatic playback; without JavaScript the portfolio opens normally.
 
-The gaming journal saves to browser `localStorage`. Entries stay in that browser on that device; they do not sync and can be lost if browser data is cleared. Export and import JSON backups to keep or transfer your entries. OP.GG links open the account pages for current match history and ranks; the website does not fetch live statistics.
+The gaming page links **KataFlix#EUNE** on EUNE and **EvelynnFlix#EUW** on EUW. OP.GG opens current match history and ranks; the website does not fetch live statistics. The session journal has been removed. Previously saved browser notes are left untouched.
+
+Body copy and controls use larger text, with small labels at least 13px. Local page links use a short animated curtain; section links retain smooth scrolling. Reduced-motion preferences disable the animations, and normal links remain available without JavaScript.
 
 The career timeline includes the Systems Engineer role at IBSCYLTD from **Oct 2026**. The downloadable PDF remains the original supplied CV and predates that addition. It includes the contact details in the supplied document; replace it with a redacted PDF if you want different public contact information.
 
@@ -69,6 +73,7 @@ With the preview server running and Playwright available, run:
 ```bash
 node tests/smoke.mjs
 node tests/intro.mjs
+node tests/transitions.mjs
 ```
 
 The browser test uses an installed Chromium when available, or Playwright's browser. See the script for optional settings. Test results apply to the environment where they run; verify the live domain after uploading, too.

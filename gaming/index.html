@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#121011" />
     <meta
       name="description"
-      content="The gaming side of Andreas Paraskeva: League of Legends on EUNE, KataFlix and EvelynnFlix, and a personal practice journal."
+      content="The gaming side of Andreas Paraskeva: League of Legends, KataFlix on EUNE, and EvelynnFlix on EUW."
     />
     <title>Gaming — Andreas Paraskeva / KataFlix</title>
     <link rel="canonical" href="https://antreasparaskeva.com/gaming/" />
@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link
       rel="icon"
-      href="../assets/images/favicon.svg?v=red-intro-2"
+      href="../assets/images/favicon.svg?v=readable-motion-3"
       type="image/svg+xml"
     />
     <link
@@ -37,10 +37,21 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="../assets/css/styles.css?v=red-intro-2" />
-    <link rel="stylesheet" href="../assets/css/gaming.css?v=red-intro-2" />
-    <script src="../assets/js/main.js?v=red-intro-2" defer></script>
-    <script src="../assets/js/gaming.js?v=red-intro-2" defer></script>
+    <link
+      rel="stylesheet"
+      href="../assets/css/styles.css?v=readable-motion-3"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/gaming.css?v=readable-motion-3"
+    />
+    <script src="../assets/js/main.js?v=readable-motion-3" defer></script>
+    <script src="../assets/js/gaming.js?v=readable-motion-3" defer></script>
+    <link
+      rel="stylesheet"
+      href="../assets/css/transitions.css?v=readable-motion-3"
+    />
+    <script src="../assets/js/transitions.js?v=readable-motion-3"></script>
   </head>
   <body class="gaming-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -192,13 +203,14 @@
               />
             </svg>
             <div class="rift-caption">
-              <span>LEAGUE OF LEGENDS</span><span>EUNE / PERSONAL PLAY</span>
+              <span>LEAGUE OF LEGENDS</span
+              ><span>EUNE + EUW / PERSONAL PLAY</span>
             </div>
           </div>
         </div>
         <div class="gaming-section-index">
           <span>SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span
-          ><span>ACCOUNTS / PRACTICE / PROGRESS</span>
+          ><span>ACCOUNTS / THE MINDSET</span>
         </div>
       </section>
 
@@ -244,7 +256,8 @@
           </div>
           <div class="account-details" aria-live="polite" aria-atomic="true">
             <div class="account-detail-top">
-              <span class="console-label">SUMMONER / EUNE</span
+              <span class="console-label" id="account-region"
+                >SUMMONER / EUNE</span
               ><span class="account-symbol" aria-hidden="true">↗</span>
             </div>
             <p class="account-name" id="account-name">
@@ -270,12 +283,11 @@
           ><p class="gaming-noscript">
             You can also open
             <a
-              href="https://op.gg/lol/summoners/eune/EvelynnFlix-EUNE"
+              href="https://op.gg/lol/summoners/euw/EvelynnFlix-EUW"
               target="_blank"
               rel="noopener noreferrer"
-              >EvelynnFlix#EUNE on OP.GG (new tab)</a
-            >. JavaScript is needed to switch accounts and use the session
-            journal.
+              >EvelynnFlix#EUW on OP.GG (new tab)</a
+            >. Enable JavaScript to switch the featured account.
           </p></noscript
         >
       </section>
@@ -290,9 +302,9 @@
           </div>
           <div class="practice-notes reveal">
             <p>
-              Progress gets more interesting when you pay attention. A good
-              session is a chance to learn something, whether the result is a
-              win or a loss.
+              Progress gets more interesting when you pay attention. A good game
+              is a chance to learn something, whether the result is a win or a
+              loss.
             </p>
             <div class="practice-steps">
               <div>
@@ -312,190 +324,6 @@
         </div>
       </section>
 
-      <section
-        class="gaming-journal shell"
-        id="journal"
-        aria-labelledby="journal-title"
-      >
-        <div class="journal-heading reveal">
-          <div>
-            <p class="eyebrow">03 / PERSONAL PRACTICE</p>
-            <h2 class="gaming-section-title" id="journal-title">
-              The session<br /><span>journal.</span>
-            </h2>
-          </div>
-          <p>
-            A small place to record a game and what you learned. Entries stay in
-            this browser; they are personal notes, and do not sync with League
-            or OP.GG.
-          </p>
-        </div>
-        <div
-          class="journal-metrics"
-          role="group"
-          aria-label="Summary of manually logged sessions"
-        >
-          <div>
-            <span class="console-label">LOGGED SESSIONS</span
-            ><strong id="journal-count">00</strong>
-          </div>
-          <div>
-            <span class="console-label">LOGGED WINS</span
-            ><strong id="journal-wins">00</strong>
-          </div>
-          <div>
-            <span class="console-label">LAST SESSION</span
-            ><strong class="journal-last-date" id="journal-last">—</strong>
-          </div>
-        </div>
-        <div class="journal-layout">
-          <form class="journal-form" id="journal-form" novalidate>
-            <div class="journal-panel-heading">
-              <h3>Log a session</h3>
-              <span aria-hidden="true">+</span>
-            </div>
-            <div class="journal-field-row">
-              <div class="journal-field">
-                <label for="session-date">Date <span>(required)</span></label
-                ><input type="date" id="session-date" name="date" required />
-              </div>
-              <div class="journal-field">
-                <label for="session-result">Result</label
-                ><select id="session-result" name="result">
-                  <option value="unrecorded">Not recorded</option>
-                  <option value="win">Win</option>
-                  <option value="loss">Loss</option>
-                </select>
-              </div>
-            </div>
-            <div class="journal-field">
-              <label for="session-champion"
-                >Champion <span>(optional)</span></label
-              ><input
-                type="text"
-                id="session-champion"
-                name="champion"
-                maxlength="40"
-                placeholder="Who did you play?"
-                autocomplete="off"
-              />
-            </div>
-            <div class="journal-field">
-              <label for="session-focus"
-                >Practice focus <span>(required)</span></label
-              ><input
-                type="text"
-                id="session-focus"
-                name="focus"
-                required
-                maxlength="80"
-                placeholder="e.g. Map awareness, CS, communication"
-                aria-describedby="focus-help"
-              />
-              <p id="focus-help" class="journal-input-help">
-                One specific thing to work on.
-              </p>
-            </div>
-            <div class="journal-field">
-              <label for="session-notes"
-                >Reflection <span>(optional)</span></label
-              ><textarea
-                id="session-notes"
-                name="notes"
-                rows="3"
-                maxlength="600"
-                placeholder="What went well? What would you change?"
-              ></textarea>
-            </div>
-            <p
-              class="journal-form-error"
-              id="journal-form-error"
-              role="alert"
-              hidden
-            ></p>
-            <button
-              class="button button--accent journal-save"
-              id="journal-save"
-              type="submit"
-              disabled
-            >
-              Save this session <span aria-hidden="true">↗</span>
-            </button>
-            <p class="journal-storage-note">
-              Saved locally on this device. Export a backup before clearing your
-              browser data.
-            </p>
-          </form>
-          <div class="journal-history">
-            <div class="journal-panel-heading">
-              <h3>Your sessions</h3>
-              <div class="journal-actions">
-                <button
-                  type="button"
-                  class="journal-text-button"
-                  id="journal-import"
-                  disabled
-                >
-                  Import JSON <span aria-hidden="true">↙</span></button
-                ><button
-                  type="button"
-                  class="journal-text-button"
-                  id="journal-export"
-                  disabled
-                >
-                  Export JSON <span aria-hidden="true">↗</span></button
-                ><button
-                  type="button"
-                  class="journal-text-button"
-                  id="journal-clear"
-                  disabled
-                >
-                  Clear all
-                </button>
-              </div>
-            </div>
-            <input
-              type="file"
-              id="journal-import-file"
-              accept="application/json,.json"
-              aria-label="Choose a journal JSON backup to merge"
-              hidden
-            />
-            <p
-              class="journal-notice"
-              id="journal-storage-warning"
-              role="status"
-              hidden
-            ></p>
-            <div class="journal-empty" id="journal-empty">
-              <span class="journal-empty-mark" aria-hidden="true">[ + ]</span>
-              <h4>A fresh start.</h4>
-              <p>
-                Your first entry starts here.<br />Play a game, pick a lesson,
-                and keep it.
-              </p>
-            </div>
-            <ol
-              class="journal-entry-list"
-              id="journal-entries"
-              aria-label="Saved gaming sessions"
-            ></ol>
-            <p
-              class="journal-status"
-              id="journal-status"
-              role="status"
-              aria-live="polite"
-              aria-atomic="true"
-            ></p>
-          </div>
-        </div>
-        <noscript
-          ><p class="gaming-noscript">
-            Enable JavaScript to save session notes in this browser. The OP.GG
-            profile links work without JavaScript.
-          </p></noscript
-        >
-      </section>
       <section class="gaming-return shell reveal">
         <p class="eyebrow">BACK TO THE DAY JOB</p>
         <a href="../index.html" class="gaming-return-link"
@@ -509,7 +337,8 @@
         >ap<span aria-hidden="true">✳</span></a
       >
       <p>
-        © <span data-year>2026</span> Andreas Paraskeva<br /><span class="muted"
+        © <span data-year>2026</span> Andreas Paraskeva<br /><span
+          class="muted"
           >Thoughtfully built. Always evolving.</span
         >
       </p>
@@ -524,35 +353,5 @@
         ><a href="#main">Back to top ↑</a>
       </div>
     </footer>
-    <dialog
-      class="journal-clear-dialog"
-      id="journal-clear-dialog"
-      aria-labelledby="clear-title"
-      aria-describedby="clear-description"
-    >
-      <div>
-        <p class="eyebrow">LOCAL JOURNAL</p>
-        <h2 id="clear-title">Clear every session?</h2>
-        <p id="clear-description">
-          This permanently deletes all journal entries from this browser. Export
-          a backup first if you want to keep them.
-        </p>
-        <div class="journal-dialog-actions">
-          <button
-            class="button button--outline"
-            type="button"
-            id="journal-clear-cancel"
-          >
-            Keep my entries</button
-          ><button
-            class="button button--accent"
-            type="button"
-            id="journal-clear-confirm"
-          >
-            Delete all entries
-          </button>
-        </div>
-      </div>
-    </dialog>
   </body>
 </html>

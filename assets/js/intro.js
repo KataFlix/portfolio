@@ -5,9 +5,9 @@
   "use strict";
   const dialog = document.getElementById("site-intro");
   if (!dialog || typeof dialog.showModal !== "function") return;
-  const SEEN_KEY = "ap.portfolio.intro.v1";
-  const SEQUENCE_MS = 3900;
-  const EXIT_MS = 700;
+  const SEEN_KEY = "ap.portfolio.intro.v2";
+  const SEQUENCE_MS = 3300;
+  const EXIT_MS = 650;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const replayButtons = [...document.querySelectorAll("[data-replay-intro]")];
   const skipButtons = [...dialog.querySelectorAll("[data-intro-skip]")];
@@ -34,7 +34,7 @@
     clearTimeout(autoTimer);
     clearTimeout(exitTimer);
     // Release scrolling synchronously; the native close event is queued.
-    document.body.classList.remove("intro-open");
+    document.body.classList.remove("intro-open", "intro-unveiling");
     if (dialog.open) dialog.close();
   }
   function finish(immediate = false) {
@@ -47,6 +47,7 @@
       return;
     }
     dialog.classList.add("is-leaving");
+    document.body.classList.add("intro-unveiling");
     exitTimer = window.setTimeout(closeIntro, EXIT_MS);
   }
   function start(trigger = null) {
@@ -58,7 +59,7 @@
     try {
       dialog.showModal();
     } catch {
-      document.body.classList.remove("intro-open");
+      document.body.classList.remove("intro-open", "intro-unveiling");
       return;
     }
     // Reset CSS animations before a replay without rebuilding the DOM.
@@ -78,7 +79,7 @@
   dialog.addEventListener("close", () => {
     clearTimeout(autoTimer);
     clearTimeout(exitTimer);
-    document.body.classList.remove("intro-open");
+    document.body.classList.remove("intro-open", "intro-unveiling");
     dialog.classList.remove("is-playing", "is-leaving", "is-static");
     finishing = false;
     (lastTrigger || document.getElementById("hero-title"))?.focus({
@@ -99,5 +100,12 @@
     button.hidden = false;
     button.addEventListener("click", () => start(button));
   });
-  if (!reducedMotion.matches && !window.location.hash && !wasSeen()) start();
+  if (document.documentElement.dataset.pageArrival) markSeen();
+  if (
+    !reducedMotion.matches &&
+    !window.location.hash &&
+    !document.documentElement.dataset.pageArrival &&
+    !wasSeen()
+  )
+    start();
 })();

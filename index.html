@@ -27,7 +27,7 @@
     <link rel="canonical" href="https://antreasparaskeva.com/" />
     <link
       rel="icon"
-      href="assets/images/favicon.svg?v=red-intro-2"
+      href="assets/images/favicon.svg?v=readable-motion-3"
       type="image/svg+xml"
     />
     <link
@@ -43,10 +43,15 @@
       as="image"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=red-intro-2" />
-    <link rel="stylesheet" href="assets/css/intro.css?v=red-intro-2" />
-    <script src="assets/js/main.js?v=red-intro-2" defer></script>
-    <script src="assets/js/intro.js?v=red-intro-2" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=readable-motion-3" />
+    <link rel="stylesheet" href="assets/css/intro.css?v=readable-motion-3" />
+    <script src="assets/js/main.js?v=readable-motion-3" defer></script>
+    <script src="assets/js/intro.js?v=readable-motion-3" defer></script>
+    <link
+      rel="stylesheet"
+      href="assets/css/transitions.css?v=readable-motion-3"
+    />
+    <script src="assets/js/transitions.js?v=readable-motion-3"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -62,42 +67,60 @@
           Skip intro <span aria-hidden="true">↗</span>
         </button>
       </div>
-      <div class="intro-art" aria-hidden="true">
-        <img
-          src="assets/images/hero-art-red.webp"
-          alt=""
-          width="1536"
-          height="1024"
-          decoding="async"
-        /><span class="intro-art-shade"></span>
-      </div>
-      <div class="intro-center">
-        <p class="intro-pretitle">
-          A LITTLE CURIOSITY. A DIFFERENT PERSPECTIVE.
-        </p>
-        <h2 class="intro-name" id="intro-name">
-          <span class="intro-word-mask"
-            ><span class="intro-word">Andreas</span></span
-          ><span class="intro-word-mask"
-            ><span class="intro-word"
-              >Paraskeva<span class="intro-dot">.</span></span
-            ></span
-          >
-        </h2>
-        <p class="intro-caption" id="intro-caption">
-          Systems thinker. Digital builder.
-        </p>
+      <div class="intro-stage">
+        <div class="intro-gallery" aria-hidden="true">
+          <div class="intro-card intro-card--web">
+            <img
+              src="assets/images/better-schools.svg"
+              alt=""
+              width="1000"
+              height="750"
+            />
+          </div>
+          <div class="intro-art intro-card intro-card--core">
+            <img
+              src="assets/images/hero-art-red.webp"
+              alt=""
+              width="1536"
+              height="1024"
+              fetchpriority="high"
+            />
+            <span class="intro-art-shade"></span>
+          </div>
+          <div class="intro-card intro-card--mobile">
+            <img
+              src="assets/images/v2go.svg"
+              alt=""
+              width="1000"
+              height="750"
+            />
+          </div>
+        </div>
+        <div class="intro-center">
+          <p class="intro-pretitle">
+            SYSTEMS. DESIGN. A DIFFERENT PERSPECTIVE.
+          </p>
+          <h2 class="intro-name" id="intro-name">
+            <span class="intro-word-mask"
+              ><span class="intro-word">Andreas</span></span
+            >
+            <span class="intro-word-mask"
+              ><span class="intro-word"
+                >Paraskeva<span class="intro-dot">.</span></span
+              ></span
+            >
+          </h2>
+          <p class="intro-caption" id="intro-caption">
+            Engineer by day. Player by night.
+          </p>
+        </div>
       </div>
       <div class="intro-bottom">
-        <p class="intro-label">CYPRUS<br /><span>SYSTEMS / WEB / PLAY</span></p>
+        <p class="intro-label">CYPRUS / SYSTEMS / WEB / PLAY</p>
         <button class="intro-enter" type="button" data-intro-skip>
           Enter portfolio <span aria-hidden="true">↗</span>
         </button>
-        <p class="intro-label intro-edition">
-          WELCOME TO MY CORNER<br /><span>EST. IN CURIOSITY</span>
-        </p>
       </div>
-      <span class="intro-rule" aria-hidden="true"></span>
     </dialog>
     <div class="scroll-progress" aria-hidden="true"></div>
     <header class="site-header shell">
@@ -557,7 +580,7 @@
           <div class="teaser-symbol" aria-hidden="true">
             <span class="crosshair"></span
             ><span class="teaser-code mono"
-              >KATAFLIX // EUNE<br />EVELYNNFLIX // EUNE</span
+              >KATAFLIX // EUNE<br />EVELYNNFLIX // EUW</span
             >
           </div>
         </div>
@@ -618,7 +641,8 @@
         >ap<span aria-hidden="true">✳</span></a
       >
       <p>
-        © <span data-year>2026</span> Andreas Paraskeva<br /><span class="muted"
+        © <span data-year>2026</span> Andreas Paraskeva<br /><span
+          class="muted"
           >Thoughtfully built. Always evolving.</span
         >
       </p>

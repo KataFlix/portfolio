@@ -1,0 +1,62 @@
+/* The same short curtain links every local HTML page. */
+.page-curtain {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #201215;
+  color: var(--text);
+  pointer-events: none;
+  transform: translateY(101%);
+  border-block: 2px solid var(--accent);
+}
+.page-curtain-mark {
+  font: 500 80px/1 var(--display);
+  letter-spacing: -0.07em;
+}
+.page-curtain-mark span {
+  color: var(--accent);
+}
+.page-curtain-label {
+  font: 14px/1.5 var(--mono);
+  letter-spacing: 0.06em;
+}
+.page-curtain.is-leaving {
+  animation: pageDepart 0.36s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+.page-curtain.is-entering {
+  animation: pageArrive 0.6s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+html.page-arriving:not(.transition-ready)::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #201215;
+}
+@keyframes pageDepart {
+  from {
+    transform: translateY(101%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes pageArrive {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-101%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-curtain,
+  html.page-arriving::after {
+    display: none;
+  }
+}

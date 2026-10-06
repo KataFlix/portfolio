@@ -99,7 +99,7 @@ try {
           assert.equal(await isUnlocked(page), true);
           assert.equal(
             await page.evaluate(() =>
-              sessionStorage.getItem("ap.portfolio.intro.v1"),
+              sessionStorage.getItem("ap.portfolio.intro.v2"),
             ),
             "1",
           );
@@ -154,7 +154,7 @@ try {
         assert.equal(await isUnlocked(page), true);
         assert.equal(
           await page.evaluate(() =>
-            sessionStorage.getItem("ap.portfolio.intro.v1"),
+            sessionStorage.getItem("ap.portfolio.intro.v2"),
           ),
           "1",
         );
