@@ -1,0 +1,864 @@
+.gaming-page {
+  --game-lime: #d4ff5f;
+  --game-ink: #101210;
+  --game-ivory: #f1f0e8;
+  --game-muted: #a4a69b;
+  --game-line: #35382f;
+}
+.gaming-page a,
+.gaming-page button,
+.gaming-page input,
+.gaming-page select,
+.gaming-page textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+.gaming-hero {
+  padding-top: 72px;
+}
+.gaming-hero-top,
+.gaming-hero-bottom,
+.gaming-section-index,
+.rift-caption,
+.account-detail-top,
+.journal-panel-heading,
+.journal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gaming-hero-top {
+  margin-bottom: 34px;
+  gap: 20px;
+}
+.gaming-hero-top .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+.gaming-page .status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--game-lime);
+  box-shadow: 0 0 12px #d4ff5f35;
+}
+.gaming-back,
+.console-label,
+.account-footnote,
+.gaming-section-index,
+.rift-caption,
+.account-tab-index,
+.practice-steps > div > span,
+.journal-entry-meta,
+.journal-text-button {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+}
+.gaming-back {
+  text-decoration: none;
+  color: var(--game-muted);
+  text-transform: uppercase;
+}
+.gaming-back:hover {
+  color: var(--game-lime);
+}
+.gaming-back span {
+  margin-right: 12px;
+  color: var(--game-lime);
+}
+.gaming-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(70px, 12.25vw, 188px);
+  font-weight: 500;
+  line-height: 0.89;
+  letter-spacing: -0.07em;
+  margin: 0 0 46px -0.075em;
+}
+.gaming-title > span {
+  color: var(--game-lime);
+}
+.gaming-hero-bottom {
+  align-items: center;
+  gap: 70px;
+}
+.gaming-intro {
+  max-width: 415px;
+  padding-bottom: 12px;
+}
+.gaming-intro-title {
+  font-size: 20px;
+  color: var(--game-ivory);
+  margin: 0 0 15px;
+}
+.gaming-intro > p:nth-child(2) {
+  color: var(--game-muted);
+  max-width: 350px;
+  line-height: 1.8;
+  font-size: 14px;
+  margin: 0 0 27px;
+}
+.rift-visual {
+  width: 47%;
+  max-width: 460px;
+  color: var(--game-lime);
+}
+.rift-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rift-caption {
+  gap: 15px;
+  color: var(--game-muted);
+  border-top: 1px solid var(--game-line);
+  padding-top: 13px;
+  margin: 0 27px;
+  font-size: 8px;
+}
+.gaming-section-index {
+  padding: 30px 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--game-line);
+  border-bottom: 1px solid var(--game-line);
+  color: var(--game-muted);
+  gap: 20px;
+}
+.gaming-section-index > span:nth-child(2) {
+  color: var(--game-lime);
+  font-size: 20px;
+}
+.gaming-accounts {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8%;
+  padding-top: 115px;
+  padding-bottom: 115px;
+  align-items: start;
+}
+.gaming-section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(42px, 5.4vw, 78px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  margin: 28px 0;
+}
+.gaming-section-title > span {
+  color: var(--game-muted);
+}
+.gaming-section-head > p:last-child {
+  max-width: 350px;
+  line-height: 1.9;
+  color: var(--game-muted);
+  font-size: 14px;
+}
+.account-console {
+  border: 1px solid var(--game-line);
+}
+.account-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--game-line);
+}
+.account-tab {
+  padding: 22px 20px;
+  color: var(--game-muted);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
+}
+.account-tab + .account-tab {
+  border-left: 1px solid var(--game-line);
+}
+.account-tab.is-active {
+  background: var(--game-lime);
+  color: var(--game-ink);
+}
+.account-tab:hover:not(.is-active) {
+  background: #1c2019;
+  color: var(--game-ivory);
+}
+.account-tab-arrow {
+  margin-left: auto;
+}
+.account-tab-index {
+  font-size: 9px;
+  opacity: 1;
+}
+.account-details {
+  padding: 32px;
+}
+.console-label {
+  color: var(--game-muted);
+  font-size: 9px;
+}
+.account-symbol {
+  color: var(--game-lime);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 35px;
+  line-height: 1;
+}
+.account-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  font-size: clamp(34px, 4vw, 53px);
+  line-height: 1.05;
+  margin: 45px 0 22px;
+  overflow-wrap: anywhere;
+}
+.account-name > span {
+  color: var(--game-muted);
+  display: block;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+  margin-top: 9px;
+}
+.account-description {
+  line-height: 1.8;
+  color: var(--game-muted);
+  font-size: 13px;
+  max-width: 325px;
+  margin-bottom: 28px;
+}
+.account-footnote {
+  color: var(--game-muted);
+  font-size: 8px;
+  margin: 28px 0 0;
+}
+.gaming-noscript {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--game-muted);
+  grid-column: 1 / -1;
+}
+.gaming-noscript a {
+  color: var(--game-lime);
+}
+.practice-band {
+  background: var(--game-lime);
+  color: var(--game-ink);
+  padding: 74px 0;
+}
+.practice-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8%;
+  align-items: center;
+}
+.practice-band .eyebrow {
+  color: #475228;
+}
+.practice-band .gaming-section-title {
+  margin-bottom: 0;
+}
+.practice-band .gaming-section-title > span {
+  color: #566b24;
+}
+.practice-notes > p {
+  line-height: 1.8;
+  max-width: 430px;
+  font-size: 16px;
+  margin: 0 0 38px;
+}
+.practice-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #10121035;
+}
+.practice-steps > div {
+  padding: 20px 12px 0 0;
+}
+.practice-steps > div > span {
+  color: #52672a;
+}
+.practice-steps p {
+  font-size: 12px;
+  margin: 12px 0 0;
+}
+.gaming-journal {
+  padding-top: 110px;
+  padding-bottom: 105px;
+}
+.journal-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 50px;
+}
+.journal-heading .gaming-section-title {
+  margin-bottom: 0;
+}
+.journal-heading > p {
+  color: var(--game-muted);
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 355px;
+  margin: 0 0 5px;
+}
+.journal-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+  border-top: 1px solid var(--game-line);
+  border-bottom: 1px solid var(--game-line);
+}
+.journal-metrics > div {
+  padding: 24px 0;
+}
+.journal-metrics > div + div {
+  border-left: 1px solid var(--game-line);
+  padding-left: 30px;
+}
+.journal-metrics strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: var(--game-lime);
+  line-height: 1.3;
+  margin-top: 7px;
+}
+.journal-metrics .journal-last-date {
+  font-size: clamp(24px, 3.1vw, 40px);
+  line-height: 1.56;
+}
+.journal-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 6%;
+  padding-top: 45px;
+}
+.journal-panel-heading {
+  border-bottom: 1px solid var(--game-line);
+  padding-bottom: 20px;
+  margin-bottom: 27px;
+  gap: 15px;
+}
+.journal-panel-heading h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.journal-panel-heading > span {
+  color: var(--game-lime);
+  font-size: 24px;
+}
+.journal-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.journal-field {
+  margin-bottom: 20px;
+}
+.journal-field label {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+.journal-field label > span {
+  color: var(--game-muted);
+  font-size: 10px;
+  margin-left: 4px;
+}
+.journal-field input,
+.journal-field select,
+.journal-field textarea {
+  font: inherit;
+  font-size: 13px;
+  color: var(--game-ivory);
+  color-scheme: dark;
+  width: 100%;
+  background: #181b16;
+  border: 1px solid var(--game-line);
+  padding: 12px 13px;
+  min-height: 46px;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.journal-field input::placeholder,
+.journal-field textarea::placeholder {
+  color: #92968a;
+  opacity: 1;
+}
+.journal-field textarea {
+  resize: vertical;
+  min-height: 104px;
+}
+.journal-field input:focus,
+.journal-field select:focus,
+.journal-field textarea:focus {
+  border-color: var(--game-lime);
+  outline: 2px solid #d4ff5f60;
+  outline-offset: 2px;
+}
+.journal-field input[aria-invalid="true"] {
+  border-color: #ffad92;
+}
+.journal-input-help,
+.journal-storage-note {
+  font-size: 10px;
+  color: var(--game-muted);
+  line-height: 1.8;
+  margin: 8px 0 0;
+}
+.journal-save {
+  width: 100%;
+  justify-content: space-between;
+}
+.journal-save:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.journal-storage-note {
+  margin-top: 15px;
+}
+.journal-form-error,
+.journal-notice {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #ffca98;
+  padding: 12px 0;
+  margin: 0 0 10px;
+}
+.journal-actions {
+  gap: 20px;
+}
+.journal-text-button {
+  background: none;
+  border: none;
+  padding: 5px 0;
+  min-height: 32px;
+  color: var(--game-lime);
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  font-size: 9px;
+}
+.journal-text-button:disabled {
+  color: #777c70;
+  cursor: default;
+}
+.journal-text-button:hover:not(:disabled) {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.journal-empty {
+  border: 1px dashed var(--game-line);
+  padding: 57px 25px;
+  text-align: center;
+  color: var(--game-muted);
+}
+.journal-empty-mark {
+  font-family: "Courier New", monospace;
+  display: block;
+  font-size: 24px;
+  color: var(--game-lime);
+  margin-bottom: 22px;
+}
+.journal-empty h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--game-ivory);
+  margin: 0 0 12px;
+}
+.journal-empty p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+.journal-entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 695px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--game-line) var(--game-ink);
+}
+.journal-entry {
+  border-bottom: 1px solid var(--game-line);
+  padding: 22px 0;
+}
+.journal-entry:first-child {
+  padding-top: 0;
+}
+.journal-entry-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--game-muted);
+  font-size: 9px;
+}
+.journal-result {
+  border: 1px solid var(--game-line);
+  padding: 3px 7px;
+  font-size: 8px;
+}
+.journal-result--win {
+  color: var(--game-lime);
+  border-color: #d4ff5f40;
+}
+.journal-result--loss {
+  color: #ffb5a3;
+  border-color: #ffb5a340;
+}
+.journal-entry h4 {
+  color: var(--game-ivory);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 15px 0 10px;
+  overflow-wrap: anywhere;
+}
+.journal-entry-notes {
+  color: var(--game-muted);
+  font-size: 12px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0 0 12px;
+}
+.journal-entry-delete {
+  background: none;
+  border: 0;
+  color: var(--game-muted);
+  font-size: 10px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.journal-entry-delete:hover {
+  color: #ffb5a3;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.journal-status {
+  color: var(--game-lime);
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 16px 0 0;
+  min-height: 20px;
+}
+.journal-status.is-error {
+  color: #ffca98;
+}
+.gaming-return {
+  border-top: 1px solid var(--game-line);
+  padding-top: 58px;
+  padding-bottom: 70px;
+}
+.gaming-return-link {
+  display: block;
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(40px, 7vw, 95px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  text-decoration: none;
+  margin-top: 25px;
+  padding-right: 80px;
+}
+.gaming-return-link > span:not(.gaming-return-arrow) {
+  color: var(--game-muted);
+  transition: color 0.2s;
+}
+.gaming-return-link:hover > span:not(.gaming-return-arrow) {
+  color: var(--game-lime);
+}
+.gaming-return-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--game-lime);
+}
+.journal-clear-dialog {
+  max-width: 520px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  padding: 35px;
+  background: var(--game-ink);
+  border: 1px solid var(--game-line);
+  color: var(--game-ivory);
+}
+.journal-clear-dialog::backdrop {
+  background: #000b;
+  backdrop-filter: blur(6px);
+}
+.journal-clear-dialog h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin: 25px 0 20px;
+}
+.journal-clear-dialog p:not(.eyebrow) {
+  font-size: 14px;
+  color: var(--game-muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.journal-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.gaming-page [hidden] {
+  display: none !important;
+}
+@media (min-width: 1500px) {
+  .gaming-title {
+    font-size: 186px;
+  }
+}
+@media (max-width: 950px) {
+  .gaming-hero {
+    padding-top: 52px;
+  }
+  .gaming-hero-bottom {
+    gap: 25px;
+  }
+  .gaming-accounts,
+  .practice-layout {
+    gap: 5%;
+  }
+  .account-tab {
+    padding: 20px 13px;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .account-details {
+    padding: 27px;
+  }
+  .journal-layout {
+    gap: 4%;
+  }
+  .journal-panel-heading {
+    align-items: start;
+  }
+  .journal-actions {
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 10px 14px;
+    max-width: 145px;
+  }
+}
+@media (max-width: 700px) {
+  .gaming-hero {
+    padding-top: 40px;
+  }
+  .gaming-hero-top {
+    margin-bottom: 35px;
+  }
+  .gaming-back {
+    font-size: 8px;
+  }
+  .gaming-hero-top .eyebrow {
+    font-size: 8px;
+    gap: 7px;
+  }
+  .gaming-title {
+    font-size: clamp(58px, 12.4vw, 88px);
+    margin-bottom: 33px;
+  }
+  .gaming-hero-bottom {
+    align-items: start;
+    flex-direction: column;
+    gap: 27px;
+  }
+  .gaming-intro {
+    max-width: 100%;
+  }
+  .gaming-intro > p:nth-child(2) {
+    max-width: 420px;
+  }
+  .gaming-intro-title {
+    font-size: 18px;
+  }
+  .rift-visual {
+    align-self: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  .gaming-section-index {
+    font-size: 8px;
+    margin-top: 32px;
+    padding: 20px 0;
+  }
+  .gaming-section-index > span:last-child {
+    display: none;
+  }
+  .gaming-accounts {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .gaming-section-title {
+    font-size: 52px;
+    margin-top: 20px;
+  }
+  .gaming-section-head > p:last-child {
+    max-width: 400px;
+  }
+  .account-tab {
+    padding: 21px 18px;
+    font-size: 14px;
+  }
+  .account-name {
+    margin-top: 32px;
+    font-size: 45px;
+  }
+  .account-details {
+    padding: 28px;
+  }
+  .practice-band {
+    padding: 55px 0;
+  }
+  .practice-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .practice-notes > p {
+    font-size: 14px;
+  }
+  .gaming-journal {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+  .journal-heading {
+    display: block;
+  }
+  .journal-heading > p {
+    margin-top: 27px;
+    max-width: 440px;
+  }
+  .journal-metrics {
+    margin-top: 33px;
+  }
+  .journal-metrics > div {
+    padding: 19px 0;
+  }
+  .journal-metrics > div + div {
+    padding-left: 16px;
+  }
+  .journal-metrics .console-label {
+    font-size: 7px;
+    letter-spacing: 0.03em;
+  }
+  .journal-metrics strong {
+    font-size: 37px;
+  }
+  .journal-metrics .journal-last-date {
+    font-size: 18px;
+    line-height: 2.7;
+    letter-spacing: -0.04em;
+  }
+  .journal-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding-top: 35px;
+  }
+  .journal-panel-heading {
+    align-items: center;
+  }
+  .journal-actions {
+    max-width: none;
+  }
+  .journal-history .journal-panel-heading {
+    flex-direction: column;
+    align-items: start;
+    gap: 13px;
+  }
+  .journal-history .journal-actions {
+    justify-content: start;
+  }
+  .journal-field input,
+  .journal-field select,
+  .journal-field textarea {
+    font-size: 16px;
+  }
+  .journal-entry-list {
+    max-height: 650px;
+  }
+  .gaming-return {
+    padding-top: 43px;
+    padding-bottom: 55px;
+  }
+  .gaming-return-link {
+    font-size: 47px;
+    padding-right: 48px;
+  }
+}
+@media (max-width: 380px) {
+  .gaming-title {
+    font-size: 12vw;
+  }
+  .gaming-back {
+    max-width: 110px;
+    text-align: right;
+  }
+  .gaming-section-title {
+    font-size: 46px;
+  }
+  .account-tab {
+    padding: 20px 11px;
+    gap: 7px;
+    font-size: 13px;
+  }
+  .account-details {
+    padding: 24px;
+  }
+  .account-name {
+    font-size: 38px;
+  }
+  .journal-field-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .journal-history .journal-panel-heading {
+    flex-direction: column;
+    align-items: start;
+    gap: 13px;
+  }
+  .journal-history .journal-actions {
+    justify-content: start;
+  }
+  .journal-metrics .journal-last-date {
+    font-size: 15px;
+  }
+  .rift-caption {
+    margin-inline: 12px;
+    font-size: 7px;
+    gap: 8px;
+  }
+  .gaming-return-link {
+    font-size: 39px;
+  }
+  .journal-clear-dialog {
+    padding: 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gaming-return-link > span {
+    transition: none;
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://antreasparaskeva.com/sitemap.xml
